@@ -23,8 +23,10 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          branch: gh-pages
-          folder: dist
+           branch: gh-pages # Target branch for GitHub Pages
+           folder: dist     # Folder containing the build output
+           token: ${{ secrets.GITHUB_TOKEN }} # Authentication token
+
