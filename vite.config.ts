@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
 
 export default defineConfig({
+  base: '/s_dadzie_portfolio_final/',  // This is required for GitHub Pages
   plugins: [react()],
   resolve: {
     alias: {
@@ -14,11 +15,11 @@ export default defineConfig({
       define: {
         global: 'globalThis',
       },
-      plugins: [
-        NodeGlobalsPolyfillPlugin({
-          buffer: true,
-        }),
-      ],
     },
+    plugins: [
+      NodeGlobalsPolyfillPlugin({
+        buffer: true,
+      }),
+    ],
   },
 });
